@@ -3,6 +3,11 @@ list = [4, 3, 5, 19, 50, 34, 26, 73, 10, 30, 36, 28, 50, 24, 18, 14, 89, 109]
 
 # def linear_search(arr, target): O(n)
 #     # Your code here
+def linear_search(arr, target):
+            for i in range(0, len(arr)):
+                if arr[i] == target:
+                    return i
+        return -1 # not found
 
 
 #     return -1   # not found
