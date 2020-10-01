@@ -1,28 +1,54 @@
 # TO-DO: Complete the selection_sort() function below
 
+list1 = [10, 25, 13, 8, 34, 23, 19, 45, 9, 7, 16, 36, 27, 23, 56]
+
 # O(n^2)
 def selection_sort(arr):
     # Loop through length of the list. 
     for i in range(0, len(arr) - 1):
+        # Current index in the list passed in. 
         cur_index = i
+        # print('line 11', arr[cur_index])
+        # sets the current index to the smallest index. 
         smallest_index = cur_index
+        # print('Line 14', arr[smallest_index])
         # TO-DO: find next smallest element
+        # add 1 to current index to loop one step in the array. 
         for j in range(cur_index + 1, len(arr)):
+            # Checks current index against the smallest index
             if arr[j] < arr[smallest_index]:
+                #sets the smallest index to j. 
                 smallest_index = j
 
+        # print('Smallest index:', arr[smallest_index], 'Current Index:', arr[cur_index])
+        # Reassigns the elements of the list according to their size. 
         arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
     return arr
 
+# print(selection_sort(list1))
+
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    # for i in range(0, len(arr) - 1):
+    #     curr_index = i
+    #     next_index = i + 1
+    #     print('Current:', arr[curr_index], 'Next:', arr[next_index])
 
+    #     if arr[curr_index] > arr[next_index]:
+    #         arr[curr_index], arr[next_index] = arr[next_index], arr[curr_index]
+    #         i += 1
+    n = len(arr)
 
+    for i in range(n-1):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+        
     return arr
 
+print(bubble_sort(list1))
 '''
 STRETCH: implement the Counting Sort function below
 
