@@ -1,9 +1,9 @@
 list1 = ['what', 'when', 5, 10, 6, 'who', 100, 10000]
 
 def linear_search(arr, target):
-	for i in range(len(arr) - 1):
+	for i in range(len(arr)):
 		if arr[i] == target:
-			return arr[i]
+			return i
 
 	return -1
 
@@ -16,13 +16,17 @@ def binary_search(arr, target):
 	low = 0
 	high = len(arr) - 1
 	while low <= high:
+		if len(arr) == 0:
+			return f'There is no array'
 		middle = (low + high) // 2
 		# quess = arr[middle]
-		if arr[middle] == target:
+		if arr[middle] < target:
+			low = middle + 1
+		elif arr[middle] > target:
+			high = middle - 1
+		else: 
 			return middle
-		if arr[middle] > target:
-			high = middle
-		
 
+	return -1  # not found
 
-    return -1  # not found
+print('binary search:', binary_search(list2, 5))

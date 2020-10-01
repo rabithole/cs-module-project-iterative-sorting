@@ -26,27 +26,31 @@ def selection_sort(arr):
 
     return arr
 
-# print(selection_sort(list1))
+print(selection_sort(list1))
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # for i in range(0, len(arr) - 1):
-    #     curr_index = i
-    #     next_index = i + 1
-    #     print('Current:', arr[curr_index], 'Next:', arr[next_index])
+    arrLength = len(arr) - 1
+    sorted = False
 
-    #     if arr[curr_index] > arr[next_index]:
-    #         arr[curr_index], arr[next_index] = arr[next_index], arr[curr_index]
-    #         i += 1
-    n = len(arr)
-
-    for i in range(n-1):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-        
+    while not sorted: 
+        sorted = True
+        for i in range(0, arrLength):
+            if arr[i] > arr[i + 1]:
+                sorted = False
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
     return arr
+
+
+    # n = len(arr)
+
+    # for i in range(n-1):
+    #     for j in range(0, n-i-1):
+    #         if arr[j] > arr[j+1]:
+    #             arr[j], arr[j+1] = arr[j+1], arr[j]
+        
+    # return arr
 
 print(bubble_sort(list1))
 '''
