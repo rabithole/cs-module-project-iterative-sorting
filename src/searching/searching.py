@@ -13,6 +13,16 @@ print(linear_search(list1, 6))
 list2 = [1, 2, 3, 5, 6, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 # Write an iterative implementation of Binary Search
 def binary_search(arr, target):
-	
+	low = 0
+	high = len(arr) - 1
+	while low <= high:
+		middle = (low + high) // 2
+		# quess = arr[middle]
+		if arr[middle] == target:
+			return middle
+		if arr[middle] > target:
+			high = middle
+		
+
 
     return -1  # not found
